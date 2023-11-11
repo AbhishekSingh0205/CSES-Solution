@@ -81,18 +81,7 @@ void solve()
 {
     /*It's WA on 2, oh cleared, This shit is onna get me TLE. Better luck next time buddy.*/
     /*USE DOUBLE HASHING RATHER THAN SINGLE HASHING !!!!*/
-    e1(n);av(a,n);
-    sort(all(a));
-    int ans=0;
-    for(int i=0;i<n;i++){
-        if(a[i]-ans>1){
-            cout<<ans+1<<endl;R;
-        }
-        else{
-            ans+=a[i];
-        }
-    }
-    cout<<ans+1<<endl;
+
 
 
 }
@@ -100,7 +89,7 @@ int32_t main()
 {
     __builtin_LIVU();
     int t = 1;
-    // cin >> t;
+    cin >> t;
     fl(i, 1, t + 1) {
         solve();
     }

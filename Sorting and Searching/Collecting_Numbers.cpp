@@ -82,17 +82,20 @@ void solve()
     /*It's WA on 2, oh cleared, This shit is onna get me TLE. Better luck next time buddy.*/
     /*USE DOUBLE HASHING RATHER THAN SINGLE HASHING !!!!*/
     e1(n);av(a,n);
-    sort(all(a));
-    int ans=0;
-    for(int i=0;i<n;i++){
-        if(a[i]-ans>1){
-            cout<<ans+1<<endl;R;
-        }
-        else{
-            ans+=a[i];
-        }
+    set<pii>st;
+    fl(i,0,n){
+        st.insert({a[i],i});
     }
-    cout<<ans+1<<endl;
+    int cnt=0;
+    int prev=-1;
+    for(int i=1;i<=n;i++){
+        pii p=*st.lower_bound({i,-1});
+        if(p.ss<prev){
+            cnt++;
+        }
+        prev=p.ss;
+    }
+    cout<<cnt+1<<endl;
 
 
 }
